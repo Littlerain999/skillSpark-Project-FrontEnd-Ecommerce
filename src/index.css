@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #151875; /* dark purple*/
+  ---color-primary-dark: #0d134e; /* null */
+  --color-secondary: #fb2e86; /* pink #1 */
+  --color-accent: #fb2e86; /* pink #1 */
+  --color-background: #7e33e0; /* purple */
+  --color-background-dark: #F1F0FF; /* white */
+  --color-text: #7e81a2; /* gray */
+}
+
+@layer components {
+  * {
+    @apply duration-[0.25s] transition-all
+  }
+  .contain {
+    @apply px-4 h-[50px] w-[90%] m-auto
+  }
+  .links {
+    @apply relative;
+    &::after {
+      @apply bg-accent content-[""] transition-all duration-[0.35s] absolute w-[100%] h-[2px] rounded-2xl -bottom-0.5 left-0 scale-[0];
+    }
+    &:hover {
+      @apply text-accent;
+    }
+
+    &:hover::after {
+      @apply scale-[1];
+    }
+  }
+  .flexer {
+    @apply flex items-center;
+  }
+}
