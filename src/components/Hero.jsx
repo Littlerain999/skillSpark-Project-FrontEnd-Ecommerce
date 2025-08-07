@@ -9,7 +9,7 @@ function Hero() {
     const { Diamond, DiamondActive } = Icons
   return (<>
     <div className="hero relative min-h-[500px] flex justify-center items-center">
-        <img src={image} alt="background image" className='absolute top-0 right-0 bottom-0 left-0 h-[100%] w-[100%] object-center object-cover' />
+        <img src={image} alt="background image" className='absolute top-0 right-0 bottom-0 left-0 h-[100%] w-[100%] object-center object-contain bg-[#f2f0ff]' />
         <div className="details flex flex-col items-start gap-4 relative w-[100%] max-w-[600px]">
             <p className='font-[500] text-accent'>{comment}</p>
             <h1 className='text-4xl leading-[55px] w-[80%] font-bold'>{title}</h1>

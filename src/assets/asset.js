@@ -1,5 +1,5 @@
 import Logo from '/Hekto.png'
-import Home_HeroImage from './home/hero.jpg'
+import Home_HeroImage from './home/hero.png'
 import Home_Background1 from './home/background(1).jpg'
 import Home_Background2 from './home/background(2).jpg'
 import Home_Background3 from './home/background(3).jpg'
