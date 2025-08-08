@@ -1,5 +1,5 @@
 import Logo from '/Hekto.png'
-import Home_HeroImage from './home/hero.png'
+import Home_HeroImage from './home/hero.jpg'
 import Home_Background1 from './home/background(1).jpg'
 import Home_Background2 from './home/background(2).jpg'
 import Home_Background3 from './home/background(3).jpg'
@@ -38,7 +38,8 @@ import Home_Couch2 from './home/chairs/couch(2).png'
     import { IoSearch } from "react-icons/io5";
     import { FaDiamond } from "react-icons/fa6";
     import { LuDiamond } from "react-icons/lu";
-    
+    import { HiMagnifyingGlassPlus } from "react-icons/hi2";
+    import { BsInfoLg } from "react-icons/bs";    
 // icons - end
 
 const Images = {
@@ -83,6 +84,9 @@ const Icons = {
     Search: IoSearch,
     Diamond: LuDiamond,
     DiamondActive: FaDiamond,
+    GlassMagnify: HiMagnifyingGlassPlus,
+    Info: BsInfoLg
+    
 }
 
 
@@ -97,12 +101,11 @@ const HeaderData = {
     },
     bottom: {
         nav: [
-            { name: "Home", status: "active"},
-            { name: "Pages", status: "inactive"},
-            { name: "Products", status: "inactive"},
-            { name: "Blog", status: "inactive"},
-            { name: "Shop", status: "inactive"},
-            { name: "Contact", status: "inactive"}
+            { name: "Home", status: "active", path: "/"},
+            { name: "Products", status: "inactive", path: "/products"},
+            { name: "Blog", status: "inactive", path: "/blog"},
+            { name: "Shop", status: "inactive", path: "/shop"},
+            { name: "Contact", status: "inactive", path: "/contact"}
         ]
     }
 }
@@ -115,6 +118,26 @@ const HeroData = {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo."
 }
 
+class ChairsClass {
+    constructor (img, name, code, price, stats) {
+        this.img = img;
+        this.name = name;
+        this.code = code;
+        this.price = price;
+        this.stats = stats
+    }
+}
+
+const ChairsData = {
+    Btns: [Icons.Cart, Icons.Heart, Icons.GlassMagnify],
+    colours: [ "bg-green-300 w-4 h-[4px] rounded", "bg-accent w-4 h-[4px] rounded", "w-4 h-[4px] rounded change" ],
+    ITEMS: [
+        new ChairsClass( Images.Home_Top3, "Cantilever chair", "Y523201", "42.00", "active" ),
+        new ChairsClass( Images.Home_Top1, "Cantilever chair", "Y523201", "42.00", "inactive" ),
+        new ChairsClass( Images.Home_Top2, "Cantilever chair", "Y523201", "42.00", "inactive" ),
+        new ChairsClass( Images.Home_Top4, "Cantilever chair", "Y523201", "42.00", "inactive" ),
+    ]
+}
 
 
 
@@ -126,6 +149,6 @@ const HeroData = {
 
 
 
-const DataBase = { Logo, Images, HeaderData, HeroData, Icons }
+const DataBase = { Logo, Images, Icons, HeaderData, HeroData, ChairsData }
 
 export default DataBase

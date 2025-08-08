@@ -2,13 +2,14 @@ import React from 'react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Chairs from '../components/Chairs'
+import Latest from '../components/Latest'
 
 function Home() {
   return (
     <div>
-        <Header />
         <Hero />
         <Chairs />
+        <Latest />
     </div>
   )
 }

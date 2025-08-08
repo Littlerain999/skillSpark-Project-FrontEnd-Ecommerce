@@ -5,10 +5,15 @@
   ---color-primary-dark: #0d134e; /* null */
   --color-secondary: #fb2e86; /* pink #1 */
   --color-accent: #fb2e86; /* pink #1 */
+  --color-accent-light: #fb2e878c;
   --color-background: #7e33e0; /* purple */
   --color-background-dark: #F1F0FF; /* white */
   --color-text: #7e81a2; /* gray */
 }
+
+/* .body {
+  background-color: #fb2e878c;
+} */
 
 @layer components {
   * {
@@ -33,4 +38,69 @@
   .flexer {
     @apply flex items-center;
   }
+  .btns button {
+    @apply justify-center h-[40px] w-[40px] rounded-[100%] text-blue-400 cursor-pointer;
+
+    &:hover {
+      @apply bg-gray-200 text-primary
+    }
+  }
+  .viewBtn{
+    @apply bg-green-400 text-white py-2 px-4 text-[14px] font-bold rounded cursor-pointer scale-[0];
+
+    &:hover {
+      @apply bg-accent text-white
+    }
+  }
+
+
+  .chairsItem .details {
+    .itemName {
+      @apply text-accent font-bold;
+    }
+    .change {
+      @apply bg-primary;
+    }
+  }
+
+  .chairsItem:hover {
+    @apply transform translate-y-[-30px];
+
+    & .viewBtn {
+      @apply scale-[1];
+    }
+
+    & .details {
+      @apply bg-primary text-white;
+
+      & .itemName {
+        @apply text-white;
+      }
+
+      & .change {
+        @apply bg-yellow-300
+      }
+    }
+  }
+
+  .chairsToggler {
+    @apply bg-accent-light w-5 h-[5px] rounded-2xl;
+
+    &#active {
+      @apply w-7 bg-accent
+    }
+  }
+  
+  .latestLinker:hover {
+    @apply text-accent
+  }
+
+  .latestLinker#active {
+    @apply text-accent;
+
+    &:hover {
+      @apply text-primary
+    }
+  }
 }
+
